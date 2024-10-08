@@ -1,4 +1,4 @@
-# Simple Shopping Store with PHPUnit Testing
+# Shopping Store with PHPUnit Testing
 
 This is a simple shopping store application built using the Laravel framework. The project demonstrates basic cart and product functionalities, including adding products to the cart, displaying product details, and removing items from the cart. PHPUnit is used to test these features.
 
@@ -12,13 +12,6 @@ This is a simple shopping store application built using the Laravel framework. T
 - Remove items from the cart
 - Update item quantities in the cart
 
-## PHPUnit Test Features
-
-- Add a new product to the cart
-- Increment product quantity in the cart
-- Handle stock availability errors
-- Remove a product from the cart
-  
 ## PHPUnit Test Cases
 
 1. Add New Product to Cart:
@@ -29,7 +22,17 @@ This is a simple shopping store application built using the Laravel framework. T
    - Checks if an error is returned when trying to add more items than available stock.
 7. Remove Product from Cart:
    - Ensures a product is removed from the cart session.
+     
+## Requirements
 
+To run this project, you need to have the following installed:
+
+- PHP >= 8.1
+- Composer
+- MySQL or another supported database
+- Node.js & npm (for front-end assets)
+- Laravel 10.10
+  
 ## Installation Instructions
 
 Follow these steps to install and run the project locally.
@@ -42,6 +45,10 @@ cd shopping-store-with-phpunit-testing
 ```
 
 ### Step 2: Set Up the Environment
+Install the dependencies:
+```bash
+composer install
+```
 Copy the example environment file and update the environment variables:
 ```bash
 cp .env.example .env
@@ -64,14 +71,18 @@ Run the database migrations to create the necessary tables:
 ```bash
 php artisan migrate
 ```
-### Step 4: Start the Development Server
+### Step 4: Seed the database
+```bash
+php artisan db:seed
+```
+### Step 5: Start the Development Server
 Now, you can start the Laravel development server:
 ```bash
 php artisan serve
 ```
 Visit http://localhost:8000 in your browser to see the application.
 
-### Step 5: Running PHPUnit Tests
+### Step 6: Running PHPUnit Tests
 The PHPUnit tests are located in the tests/Feature directory and are written to test the cart functionalities.
 
 To run the tests, use the following command:
